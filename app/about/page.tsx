@@ -113,7 +113,7 @@ export default function AboutPage() {
             >
               <div className="relative h-[400px] w-full lg:h-[500px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
+                  src="/public/abu-zaid-pic.webp?height=500&width=500"
                   alt="Hire Kalam - Web Developer"
                   fill
                   className="object-cover"
@@ -140,7 +140,7 @@ export default function AboutPage() {
             >
               <h2 className="text-3xl font-bold">Web Developer & Digital Marketing Expert</h2>
               <p className="text-muted-foreground">
-                Hello! I'm Kalam, a passionate web developer and digital marketing expert based in Dubai, UAE. I help
+                Hello! I'm Kalam, a passionate web developer and digital marketing expert based in Bihar, India. I help
                 businesses grow their online presence with custom websites, mobile apps, and effective digital marketing
                 strategies.
               </p>
@@ -156,15 +156,15 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="font-medium">Based in</p>
-                  <p className="text-muted-foreground">Dubai, UAE</p>
-                </div>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">contact@hirekalam.com</p>
+                  <p className="text-muted-foreground">Bihar, India</p>
                 </div>
                 <div>
                   <p className="font-medium">Phone</p>
                   <p className="text-muted-foreground">+91 7255965136</p>
+                </div>
+                <div>
+                  <p className="font-medium">Email</p>
+                  <p className="text-muted-foreground">contact@hirekalam.com</p>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
