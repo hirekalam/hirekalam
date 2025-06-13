@@ -113,7 +113,7 @@ export default function AboutPage() {
             >
               <div className="relative h-[400px] w-full lg:h-[500px] rounded-lg overflow-hidden">
                 <Image
-                  src="/public/abu-zaid-pic.webp?height=500&width=500"
+                  src="/abu-zaid-pic.webp?height=500&width=500"
                   alt="Hire Kalam - Web Developer"
                   fill
                   className="object-cover"
