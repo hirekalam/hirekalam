@@ -53,21 +53,21 @@ export default function HomePage() {
       role: "CEO, Eptain & Company",
       content:
         "Kalam created an amazing website for our IT firm. The design is modern and the functionality is perfect. Highly recommend!",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/client.webp?height=40&width=40",
     },
     {
       name: "Sarah Johnson",
       role: "Owner, Dubai Cleaning Services",
       content:
         "Our cleaning service website looks professional and brings in new clients every day. Great work on SEO too!",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/client.webp?height=40&width=40",
     },
     {
       name: "Raj Patel",
       role: "Director, Zevroc Training Institute",
       content:
         "The website Kalam built for our training institute has helped us reach more students. The design is clean and user-friendly.",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/client.webp?height=40&width=40",
     },
   ]
 
@@ -156,7 +156,7 @@ export default function HomePage() {
             >
               <div className="relative h-[400px] w-full lg:h-[500px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
+                  src="/abu-zaid-pic.webp?height=500&width=500"
                   alt="Hire Kalam - Web Developer"
                   fill
                   className="object-cover"
@@ -257,7 +257,7 @@ export default function HomePage() {
               className="relative h-[400px]"
             >
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/hire-kalam-pic.webp?height=400&width=600"
                 alt="About Hire Kalam"
                 fill
                 className="object-cover rounded-lg"

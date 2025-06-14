@@ -154,11 +154,11 @@ export default function Footer() {
               </span>
               <span className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
-                contact@hirekalam.com
+                kalam_ansari@outlook.com
               </span>
               <span className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
-                Dubai, UAE & Worldwide
+                Gopalganj, Bihar, India
               </span>
             </div>
           </div>
