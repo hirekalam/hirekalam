@@ -42,28 +42,28 @@ export default function HomePage() {
 
   const stats = [
     { value: "5+", label: "Years Experience" },
-    { value: "50+", label: "Projects Completed" },
-    { value: "30+", label: "Happy Clients" },
+    { value: "25+", label: "Projects Completed" },
+    { value: "50+", label: "Happy Clients" },
     { value: "100%", label: "Client Satisfaction" },
   ]
 
   const testimonials = [
     {
-      name: "Ahmed Hassan",
+      name: "Tirath Sharma",
       role: "CEO, Eptain & Company",
       content:
         "Kalam created an amazing website for our IT firm. The design is modern and the functionality is perfect. Highly recommend!",
       avatar: "/client.webp?height=40&width=40",
     },
     {
-      name: "Sarah Johnson",
+      name: "Ahmad Badar",
       role: "Owner, Dubai Cleaning Services",
       content:
         "Our cleaning service website looks professional and brings in new clients every day. Great work on SEO too!",
       avatar: "/client.webp?height=40&width=40",
     },
     {
-      name: "Raj Patel",
+      name: "R. Raj",
       role: "Director, Zevroc Training Institute",
       content:
         "The website Kalam built for our training institute has helped us reach more students. The design is clean and user-friendly.",
@@ -282,7 +282,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <h2 className="text-3xl md:text-4xl font-bold">Web Developer & Digital Marketing Expert from Dubai</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Web Developer & Digital Marketing Expert from India</h2>
               <p className="text-muted-foreground">
                 I help businesses grow online with custom web solutions and digital marketing strategies. With over 5
                 years of experience, I've worked with clients from Dubai, UAE, and worldwide.
