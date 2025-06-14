@@ -30,9 +30,9 @@ export default function AboutPage() {
         "Working with clients from Dubai, UAE, and worldwide to create custom websites, mobile apps, and digital marketing strategies.",
     },
     {
-      position: "Web Developer",
-      company: "Tech Solutions Dubai",
-      period: "2018 - 2020",
+      position: "Digital Marketing Manager",
+      company: "Alcazaar International",
+      period: "2021 - 2025",
       description:
         "Developed websites and web applications for businesses in the UAE. Worked on e-commerce sites, corporate websites, and custom web applications.",
     },
