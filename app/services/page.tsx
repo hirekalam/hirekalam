@@ -9,85 +9,97 @@ import ServiceCard from "@/components/service-card"
 
 export default function ServicesPage() {
   const services = [
-    {
-      id: "web-design",
-      title: "Web Design",
-      description:
-        "Custom modern websites for businesses in Dubai, UAE, and worldwide. Responsive designs that look great on all devices.",
-      icon: <Layout className="h-10 w-10" />,
-      features: [
-        "Custom website design",
-        "Responsive layouts",
-        "User-friendly interfaces",
-        "Fast loading speeds",
-        "SEO-friendly structure",
-      ],
-    },
-    {
-      id: "mobile-app",
-      title: "Mobile App Development",
-      description:
-        "Native and cross-platform mobile apps for iOS and Android. User-friendly interfaces with powerful functionality.",
-      icon: <Smartphone className="h-10 w-10" />,
-      features: [
-        "iOS and Android apps",
-        "Cross-platform development",
-        "User-friendly interfaces",
-        "Performance optimization",
-        "App store submission",
-      ],
-    },
-    {
-      id: "digital-marketing",
-      title: "Digital Marketing",
-      description:
-        "Data-driven marketing strategies to grow your business. SEO, social media, and content marketing for UAE and global clients.",
-      icon: <Globe className="h-10 w-10" />,
-      features: [
-        "Search engine optimization (SEO)",
-        "Social media marketing",
-        "Content marketing",
-        "Email marketing campaigns",
-        "Performance analytics",
-      ],
-    },
-    {
-      id: "web-hosting",
-      title: "Web Hosting",
-      description:
-        "Safe, reliable website hosting with high uptime. Fast servers and excellent support for businesses worldwide.",
-      icon: <Database className="h-10 w-10" />,
-      features: [
-        "99.9% uptime guarantee",
-        "Fast SSD storage",
-        "Free SSL certificates",
-        "Daily backups",
-        "24/7 technical support",
-      ],
-    },
-    {
-      id: "graphic-design",
-      title: "Graphic Design",
-      description:
-        "Professional logo and visual design for branding. Creative solutions for businesses in Dubai and beyond.",
-      icon: <FileText className="h-10 w-10" />,
-      features: ["Logo design", "Brand identity", "Marketing materials", "Social media graphics", "Print design"],
-    },
-    {
-      id: "video-editing",
-      title: "Video Editing",
-      description:
-        "Professional video editing services for marketing and social media. High-quality videos for clients globally and in UAE.",
-      icon: <Video className="h-10 w-10" />,
-      features: [
-        "Marketing videos",
-        "Social media content",
-        "Motion graphics",
-        "Video optimization",
-        "Custom animations",
-      ],
-    },
-  ]
+  {
+    id: "web-design",
+    title: "Web Design",
+    description:
+      "Custom modern websites for businesses in Dubai, UAE, and worldwide. Responsive designs that look great on all devices.",
+    icon: <Layout className="h-10 w-10" />,
+    features: [
+      "Custom website design",
+      "Responsive layouts",
+      "User-friendly interfaces",
+      "Fast loading speeds",
+      "SEO-friendly structure",
+    ],
+    image: "/web-design.webp", // Add image URL
+  },
+  {
+    id: "mobile-app",
+    title: "Mobile App Development",
+    description:
+      "Native and cross-platform mobile apps for iOS and Android. User-friendly interfaces with powerful functionality.",
+    icon: <Smartphone className="h-10 w-10" />,
+    features: [
+      "iOS and Android apps",
+      "Cross-platform development",
+      "User-friendly interfaces",
+      "Performance optimization",
+      "App store submission",
+    ],
+    image: "/mobile-app.webp",
+  },
+  {
+    id: "digital-marketing",
+    title: "Digital Marketing",
+    description:
+      "Data-driven marketing strategies to grow your business. SEO, social media, and content marketing for UAE and global clients.",
+    icon: <Globe className="h-10 w-10" />,
+    features: [
+      "Search engine optimization (SEO)",
+      "Social media marketing",
+      "Content marketing",
+      "Email marketing campaigns",
+      "Performance analytics",
+    ],
+    image: "/digital-marketing.webp",
+  },
+  {
+    id: "web-hosting",
+    title: "Web Hosting",
+    description:
+      "Safe, reliable website hosting with high uptime. Fast servers and excellent support for businesses worldwide.",
+    icon: <Database className="h-10 w-10" />,
+    features: [
+      "99.9% uptime guarantee",
+      "Fast SSD storage",
+      "Free SSL certificates",
+      "Daily backups",
+      "24/7 technical support",
+    ],
+    image: "/web-hosting.webp",
+  },
+  {
+    id: "graphic-design",
+    title: "Graphic Design",
+    description:
+      "Professional logo and visual design for branding. Creative solutions for businesses in Dubai and beyond.",
+    icon: <FileText className="h-10 w-10" />,
+    features: [
+      "Logo design",
+      "Brand identity",
+      "Marketing materials",
+      "Social media graphics",
+      "Print design",
+    ],
+    image: "/graphic-design.webp",
+  },
+  {
+    id: "video-editing",
+    title: "Video Editing",
+    description:
+      "Professional video editing services for marketing and social media. High-quality videos for clients globally and in UAE.",
+    icon: <Video className="h-10 w-10" />,
+    features: [
+      "Marketing videos",
+      "Social media content",
+      "Motion graphics",
+      "Video optimization",
+      "Custom animations",
+    ],
+    image: "/video-editing.webp",
+  },
+];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -202,12 +214,14 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8 }}
                 className={`${index % 2 !== 0 ? "lg:order-1" : ""}`}
               >
-                <div className="relative h-[300px] md:h-[400px] bg-muted rounded-lg overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl text-primary/20">{service.icon}</div>
-                  </div>
-                </div>
-              </motion.div>
+                <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden">
+      <img
+      src={service.image}
+      alt={`${service.title} illustration`}
+      className="w-full h-full object-cover"
+    />
+  </div>
+</motion.div>
             </div>
           </div>
         </section>
