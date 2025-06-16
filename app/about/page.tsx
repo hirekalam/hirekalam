@@ -34,12 +34,12 @@ export default function AboutPage() {
       company: "Alcazaar International",
       period: "2021 - 2025",
       description:
-        "Developed websites and web applications for businesses in the UAE. Worked on e-commerce sites, corporate websites, and custom web applications.",
+        "Developed and maintained website of Alcazaar. Managed all social media account.",
     },
     {
-      position: "Digital Marketing Specialist",
-      company: "Marketing Agency",
-      period: "2016 - 2018",
+      position: "Sales & Marketing Person",
+      company: "Emarat.ae",
+      period: "2017 - 2021",
       description:
         "Managed digital marketing campaigns for clients. Focused on SEO, content marketing, and social media strategies.",
     },
@@ -47,10 +47,10 @@ export default function AboutPage() {
 
   const education = [
     {
-      degree: "Bachelor of Computer Science",
-      institution: "University of Technology",
+      degree: "Bachelor of Science (DO)",
+      institution: "C. University Bihar, India",
       period: "2012 - 2016",
-      description: "Specialized in web development and software engineering. Graduated with honors.",
+      description: "B. Sc. from C. University",
     },
     {
       degree: "Digital Marketing Certification",
@@ -59,10 +59,10 @@ export default function AboutPage() {
       description: "Comprehensive training in digital marketing strategies, SEO, and analytics.",
     },
     {
-      degree: "UI/UX Design Course",
-      institution: "Design Institute",
+      degree: "Web Development Certification",
+      institution: "YTG Institute",
       period: "2019",
-      description: "Advanced training in user interface and user experience design principles.",
+      description: "Advanced training in web development.",
     },
   ]
 
