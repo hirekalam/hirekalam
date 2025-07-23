@@ -1,17 +1,17 @@
-import { requireAuth } from "@/lib/auth"
+import { requireAdminAuth } from "@/lib/otp-auth"
 import { getAllBlogPosts } from "@/lib/blog-admin"
-import AdminLayout from "@/components/admin/admin-layout"
+import AdvancedAdminLayout from "@/components/admin/advanced-admin-layout"
 import PostsTable from "@/components/admin/posts-table"
 import { Button } from "@/components/ui/button"
 import { PenTool } from "lucide-react"
 import Link from "next/link"
 
 export default async function AdminPostsPage() {
-  const session = await requireAuth()
+  const session = await requireAdminAuth()
   const posts = await getAllBlogPosts()
 
   return (
-    <AdminLayout user={session.user}>
+    <AdvancedAdminLayout user={session.user}>
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div>
@@ -19,7 +19,7 @@ export default async function AdminPostsPage() {
             <p className="text-muted-foreground">Manage your blog posts</p>
           </div>
           <Link href="/admin/posts/new">
-            <Button>
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
               <PenTool className="mr-2 h-4 w-4" />
               New Post
             </Button>
@@ -28,6 +28,6 @@ export default async function AdminPostsPage() {
 
         <PostsTable posts={posts} />
       </div>
-    </AdminLayout>
+    </AdvancedAdminLayout>
   )
 }
