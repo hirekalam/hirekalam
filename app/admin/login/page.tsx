@@ -1,127 +1,135 @@
-"use client"
+// OTP Admin Login System (Next.js 13+ App Router + Resend)
 
-import type React from "react"
+// === .env.local ===
+// RESEND_API_KEY=re_6KYhSkzj_EXu8ghaqybASMqRuvX2x6AKa
+// ALLOWED_EMAIL=ds.bathua@gmail.com
+
+// === app/api/auth/login/route.ts ===
+import { NextResponse } from "next/server"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
+export async function POST(req: Request) {
+  const { email } = await req.json()
+
+  if (email !== process.env.ALLOWED_EMAIL) {
+    return NextResponse.json({ error: "Unauthorized email" }, { status: 401 })
+  }
+
+  const otp = Math.floor(100000 + Math.random() * 900000).toString()
+  globalThis.currentOtp = otp
+
+  try {
+    await resend.emails.send({
+      from: "Admin Login <onboarding@resend.dev>",
+      to: [email],
+      subject: "Your OTP for Admin Login",
+      html: `<p>Your OTP is: <strong>${otp}</strong></p>`
+    })
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    return NextResponse.json({ error: "Failed to send OTP" }, { status: 500 })
+  }
+}
+
+// === app/api/auth/verify/route.ts ===
+import { NextResponse } from "next/server"
+
+export async function POST(req: Request) {
+  const { otp } = await req.json()
+
+  if (otp === globalThis.currentOtp) {
+    globalThis.currentOtp = null
+    return NextResponse.json({ success: true })
+  } else {
+    return NextResponse.json({ error: "Invalid OTP" }, { status: 401 })
+  }
+}
+
+// === app/admin-login/page.tsx ===
+"use client"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Eye, EyeOff, Lock, Mail } from "lucide-react"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
 
-export default function AdminLoginPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState("")
+export default function AdminLogin() {
+  const [email, setEmail] = useState("ds.bathua@gmail.com")
+  const [otp, setOtp] = useState("")
+  const [step, setStep] = useState<"email" | "otp">("email")
+  const [message, setMessage] = useState("")
+  const [loading, setLoading] = useState(false)
   const router = useRouter()
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setError("")
+  const handleEmailSubmit = async () => {
+    setLoading(true)
+    const res = await fetch("/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email })
+    })
+    const data = await res.json()
+    setLoading(false)
+    if (data.success) {
+      setStep("otp")
+    } else {
+      setMessage(data.error)
+    }
+  }
 
-    try {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      })
-
-      if (response.ok) {
-        router.push("/admin")
-      } else {
-        const data = await response.json()
-        setError(data.error || "Login failed")
-      }
-    } catch (error) {
-      setError("An error occurred. Please try again.")
-    } finally {
-      setIsLoading(false)
+  const handleOtpVerify = async () => {
+    setLoading(true)
+    const res = await fetch("/api/auth/verify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ otp })
+    })
+    const data = await res.json()
+    setLoading(false)
+    if (data.success) {
+      router.push("/admin")
+    } else {
+      setMessage(data.error)
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/20 p-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-md"
-      >
-        <Card className="shadow-lg">
-          <CardHeader className="space-y-1 text-center">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-              <Lock className="h-6 w-6 text-primary" />
-            </div>
-            <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
-            <CardDescription>Enter your credentials to access the admin panel</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="admin@hirekalam.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="pl-10"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input
-                    id="password"
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="pl-10 pr-10"
-                    required
-                  />
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="icon"
-                    className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </Button>
-                </div>
-              </div>
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="max-w-sm w-full space-y-4">
+        <h1 className="text-xl font-bold text-center">Admin Login</h1>
 
-              {error && (
-                <Alert variant="destructive">
-                  <AlertDescription>{error}</AlertDescription>
-                </Alert>
-              )}
+        {step === "email" && (
+          <>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled
+            />
+            <Button onClick={handleEmailSubmit} disabled={loading} className="w-full">
+              {loading ? "Sending OTP..." : "Send OTP"}
+            </Button>
+          </>
+        )}
 
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Signing in..." : "Sign In"}
-              </Button>
-            </form>
+        {step === "otp" && (
+          <>
+            <Input
+              type="text"
+              placeholder="Enter OTP"
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+            />
+            <Button onClick={handleOtpVerify} disabled={loading} className="w-full">
+              {loading ? "Verifying..." : "Verify OTP"}
+            </Button>
+          </>
+        )}
 
-            <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-              <p className="text-sm text-muted-foreground mb-2">Demo Credentials:</p>
-              <p className="text-xs font-mono">Email: admin@hirekalam.com</p>
-              <p className="text-xs font-mono">Password: HireKalam2024!</p>
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
+        {message && <p className="text-red-500 text-sm text-center">{message}</p>}
+      </div>
     </div>
   )
 }
