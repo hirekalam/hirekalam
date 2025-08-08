@@ -5,14 +5,14 @@ import Image from "next/image"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const clientLogos = [
-  { name: "Eptain & Company", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Zevroc Training Institute", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Dubai Cleaning Services", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "UAE Cleaning Directory", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Ras Al Khaimah Services", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Tech Solutions", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Digital Marketing Agency", logo: "/placeholder.svg?height=60&width=120" },
-  { name: "Web Hosting Company", logo: "/placeholder.svg?height=60&width=120" },
+  { name: "Eptain & Company", logo: "/red carpet dubai logo.webp?height=60&width=120" },
+  { name: "Zevroc Training Institute", logo: "/zevroc logo.webp?height=60&width=120" },
+  { name: "Dubai Cleaning Services", logo: "/creative graphic ksa.webp?height=60&width=120" },
+  { name: "UAE Cleaning Directory", logo: "/cleaning-company-logo.webp?height=60&width=120" },
+  { name: "Ras Al Khaimah Services", logo: "/al sharif.webp?height=60&width=120" },
+  { name: "Tech Solutions", logo: "/alcazaar-international-logo.webp?height=60&width=120" },
+  { name: "Digital Marketing Agency", logo: "/computer-training-institute-logo-by-hk.webp?height=60&width=120" },
+  { name: "Web Hosting Company", logo: "/ccs uae.webp?height=60&width=120" },
 ]
 
 // Duplicate logos for continuous scrolling

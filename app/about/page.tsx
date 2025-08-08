@@ -11,14 +11,22 @@ import SectionHeading from "@/components/section-heading"
 
 export default function AboutPage() {
   const skills = [
-    { name: "HTML/CSS", level: 95 },
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 85 },
-    { name: "Next.js", level: 80 },
-    { name: "Node.js", level: 75 },
-    { name: "UI/UX Design", level: 85 },
+    { name: "WordPress", level: 95 },
     { name: "SEO", level: 80 },
-    { name: "Digital Marketing", level: 75 },
+    { name: "AI Expertise", level: 99 },
+    { name: "Google Ads", level: 85 },
+    { name: "Meta Ads", level: 90 },
+    { name: "Adobe Photoshop", level: 95 },
+    { name: "Video Editing", level: 80 },
+    { name: "Next.js", level: 75 },
+    { name: "MS-Office Suite", level: 80 },
+    { name: "Document Editing", level: 100 },
+    { name: "Internet Research", level: 100 },
+    { name: "Graphic Designing", level: 85 },
+    { name: "Software Intallation", level: 95 },
+    { name: "Computer Problem Troubleshooting", level: 85 },
+    { name: "Data Scraping", level: 80 },
+    { name: "Print Design", level: 95 },
   ]
 
   const experiences = [
@@ -47,22 +55,22 @@ export default function AboutPage() {
 
   const education = [
     {
-      degree: "Bachelor of Science (DO)",
-      institution: "C. University Bihar, India",
-      period: "2012 - 2016",
+      degree: "Bachelor of Science (Dropout)",
+      institution: "Cpr. University Bihar, India",
+      period: "2014 - 2016",
       description: "B. Sc. from C. University",
     },
     {
-      degree: "Digital Marketing Certification",
-      institution: "Google Digital Academy",
-      period: "2017",
-      description: "Comprehensive training in digital marketing strategies, SEO, and analytics.",
+      degree: "Advance Diploma in Computer Apps",
+      institution: "GS Training Center",
+      period: "2016",
+      description: "Comprehensive training in Computer Applications.",
     },
     {
-      degree: "Web Development Certification",
+      degree: "Web Development & Digital Marketing",
       institution: "YTG Institute",
       period: "2019",
-      description: "Advanced training in web development.",
+      description: "Advanced training in web development & digital marketing.",
     },
   ]
 
@@ -164,7 +172,8 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">contact@hirekalam.com</p>
+                  <p className="text-muted-foreground">kalam_ansari@
+                    outlook.com</p>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
