@@ -26,14 +26,14 @@ export default function AboutPage() {
     {
       position: "Freelance Web Developer",
       company: "Self-employed",
-      period: "2020 - Present",
+      period: "2022 - Present",
       description:
         "Working with clients from Dubai, UAE, and worldwide to create custom websites, mobile apps, and digital marketing strategies.",
     },
     {
       position: "Digital Marketing Manager",
       company: "Alcazaar International",
-      period: "2021 - 2025",
+      period: "2023 - 2025",
       description:
         "Developed and maintained website of Alcazaar. Managed all social media account.",
     },
@@ -42,7 +42,7 @@ export default function AboutPage() {
       company: "Emarat.ae",
       period: "2017 - 2021",
       description:
-        "Managed digital marketing campaigns for clients. Focused on SEO, content marketing, and social media strategies.",
+        "Sales and promotion of products to achieve the target.",
     },
   ]
 
@@ -146,7 +146,7 @@ export default function AboutPage() {
                 strategies.
               </p>
               <p className="text-muted-foreground">
-                With over 5 years of experience, I've worked with clients from various industries, creating digital
+                With over 3 years of experience, I've worked with clients from various industries, creating digital
                 solutions that drive results. My goal is to help businesses succeed online by combining beautiful design
                 with powerful functionality.
               </p>
@@ -176,10 +176,12 @@ export default function AboutPage() {
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
+                <Link href="/projects">
                 <Button size="lg" variant="outline" className="group">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download CV
+                  View My Works
+                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
+                </Link>
               </div>
             </motion.div>
           </div>

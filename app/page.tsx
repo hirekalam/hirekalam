@@ -15,34 +15,34 @@ import ClientLogoSlider from "@/components/client-logo-slider"
 export default function HomePage() {
   const services = [
     {
-      title: "Web Design",
+      title: "Website Design and Maintenance",
       description:
-        "Custom modern websites for businesses in Dubai, UAE, and worldwide. Responsive designs that look great on all devices.",
+        "I design Fast, Modern SEO-friendly websites design that look great on all devices, and maintenance solution.",
       icon: <Layout className="h-10 w-10" />,
     },
     {
-      title: "Mobile App Development",
+      title: "Ads Campaigns (Google & Facebook Ads)",
       description:
-        "Native and cross-platform mobile apps for iOS and Android. User-friendly interfaces with powerful functionality.",
+        "Targeted ad campaigns on Google, Meta and all social media platforms to generate real leads and increase sales.",
       icon: <Smartphone className="h-10 w-10" />,
     },
     {
-      title: "Digital Marketing",
+      title: "Social Media Management",
       description:
-        "Data-driven marketing strategies to grow your business. SEO, social media, and content marketing for UAE and global clients.",
+        "Promote your services on Facebook, Instagram, and other platforms to reach local customers.",
       icon: <Globe className="h-10 w-10" />,
     },
     {
-      title: "Web Hosting",
+      title: "Local SEO & Google Business Setup",
       description:
-        "Safe, reliable website hosting with high uptime. Fast servers and excellent support for businesses worldwide.",
+        "Get found on Google when people search for your services in your area.",
       icon: <Database className="h-10 w-10" />,
     },
   ]
 
   const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "25+", label: "Projects Completed" },
+    { value: "3+", label: "Years Experience" },
+    { value: "50+", label: "Projects Completed" },
     { value: "50+", label: "Happy Clients" },
     { value: "100%", label: "Client Satisfaction" },
   ]
@@ -126,8 +126,7 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className="text-xl text-muted-foreground max-w-lg"
               >
-                Professional web development and digital marketing services to help your business grow online. Custom
-                websites, mobile apps, and marketing strategies.
+                I create professional websites, logos, and run targeted Google Ads & Meta Ads campaigns along with marketing solutions that help small businesses grow faster.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

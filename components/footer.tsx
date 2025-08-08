@@ -24,11 +24,6 @@ export default function Footer() {
       href: "https://www.instagram.com/hirekalam/",
       icon: <Instagram className="h-5 w-5" />,
     },
-    {
-      name: "GitHub",
-      href: "https://github.com/hirekalam",
-      icon: <Github className="h-5 w-5" />,
-    },
   ]
 
   const footerLinks = [
@@ -46,10 +41,10 @@ export default function Footer() {
     {
       title: "Services",
       links: [
-        { name: "Web Design", href: "/services#web-design" },
-        { name: "Mobile App Development", href: "/services#mobile-app" },
-        { name: "Digital Marketing", href: "/services#digital-marketing" },
-        { name: "Web Hosting", href: "/services#web-hosting" },
+        { name: "Web Design 'n Maintenance", href: "/services#web-design" },
+        { name: "Ads Campaigns", href: "/services#digital-marketing" },
+        { name: "Social Media Management", href: "/services#digital-marketing" },
+        { name: "Local SEO & Google Business Setup", href: "/services#web-hosting" },
         { name: "Graphic Design", href: "/services#graphic-design" },
       ],
     },
@@ -158,7 +153,7 @@ export default function Footer() {
               </span>
               <span className="flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
-                Gopalganj, Bihar, India
+                Bihar, India
               </span>
             </div>
           </div>

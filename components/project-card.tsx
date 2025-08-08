@@ -66,12 +66,11 @@ export default function ProjectCard({
             </Link>
           )}
           {githubUrl && (
-            <Link href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
               <Button variant="outline" className="w-full">
                 <Github className="h-4 w-4 mr-2" />
                 Code
               </Button>
-            </Link>
+
           )}
         </CardFooter>
       </Card>

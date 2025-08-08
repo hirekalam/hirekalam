@@ -54,19 +54,19 @@ export default function ContactPage() {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
       value: "+91 7255965136",
-      link: "tel:+917255965136",
+      link: "https://wa.me/+917255965136/",
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      value: "contact@hirekalam.com",
-      link: "mailto:contact@hirekalam.com",
+      value: "kalam_ansaari@outlook.com",
+      link: "mailto:kalam_ansaari@outlook.com",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      value: "Dubai, UAE & Worldwide",
-      link: "#",
+      value: "Bihar, India",
+      link: "https://wa.me/+917255965136/",
     },
   ]
 
@@ -94,12 +94,6 @@ export default function ContactPage() {
       icon: <Instagram className="h-5 w-5" />,
       href: "https://www.instagram.com/hirekalam/",
       color: "bg-pink-600",
-    },
-    {
-      name: "GitHub",
-      icon: <Github className="h-5 w-5" />,
-      href: "https://github.com/hirekalam",
-      color: "bg-gray-800",
     },
   ]
 
@@ -159,7 +153,7 @@ export default function ContactPage() {
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
+                      <Label htmlFor="name">Name and Country</Label>
                       <Input
                         id="name"
                         name="name"
@@ -193,11 +187,11 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
+                      <Label htmlFor="message">Message and budget</Label>
                       <Textarea
                         id="message"
                         name="message"
-                        placeholder="Your message"
+                        placeholder="Your message, budget and WhatsApp number"
                         rows={6}
                         value={formData.message}
                         onChange={handleChange}
@@ -271,16 +265,12 @@ export default function ContactPage() {
                 <CardContent>
                   <div className="space-y-2">
                     <div className="flex justify-between">
-                      <span>Monday - Friday</span>
-                      <span>9:00 AM - 6:00 PM</span>
+                      <span>Saturday - Thursday</span>
+                      <span>7:00 AM - 8:00 PM</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Saturday</span>
-                      <span>10:00 AM - 4:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span>Closed</span>
+                      <span>Friday</span>
+                      <span>2:00 PM - 10:00 PM</span>
                     </div>
                   </div>
                 </CardContent>

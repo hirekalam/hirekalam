@@ -11,9 +11,9 @@ export default function ServicesPage() {
   const services = [
   {
     id: "web-design",
-    title: "Web Design",
+    title: "Website Design and Maintenance",
     description:
-      "Custom modern websites for businesses in Dubai, UAE, and worldwide. Responsive designs that look great on all devices.",
+      "I design Fast, Modern SEO-friendly websites design that look great on all devices, and maintenance solution to keep your website updated & secure.",
     icon: <Layout className="h-10 w-10" />,
     features: [
       "Custom website design",
@@ -26,48 +26,47 @@ export default function ServicesPage() {
   },
   {
     id: "mobile-app",
-    title: "Mobile App Development",
+    title: "Ads Campaigns (Google & Facebook Ads)",
     description:
-      "Native and cross-platform mobile apps for iOS and Android. User-friendly interfaces with powerful functionality.",
+      "Targeted ad campaigns on Google, Meta and all social media platforms to generate real leads and increase sales.",
     icon: <Smartphone className="h-10 w-10" />,
     features: [
-      "iOS and Android apps",
-      "Cross-platform development",
-      "User-friendly interfaces",
-      "Performance optimization",
-      "App store submission",
+      "Google Ads",
+      "Facebook Ads",
+      "Tik-Tok Ads",
+      "Snapchat Ads",
+      "All Social-Media Platforms",
     ],
     image: "/mobile-app.webp",
   },
   {
     id: "digital-marketing",
-    title: "Digital Marketing",
+    title: "Social Media Management",
     description:
-      "Data-driven marketing strategies to grow your business. SEO, social media, and content marketing for UAE and global clients.",
+      "Promote your services on Facebook, Instagram, and other platforms to reach local customers.",
     icon: <Globe className="h-10 w-10" />,
     features: [
-      "Search engine optimization (SEO)",
-      "Social media marketing",
+      "Facebook",
+      "Instagram",
+      "Tik-Tok etc.",
       "Content marketing",
-      "Email marketing campaigns",
       "Performance analytics",
     ],
     image: "/digital-marketing.webp",
   },
   {
     id: "web-hosting",
-    title: "Web Hosting",
+    title: "Local SEO & Google Business Setup",
     description:
-      "Safe, reliable website hosting with high uptime. Fast servers and excellent support for businesses worldwide.",
+      "Get found on Google when people search for your services in your area.",
     icon: <Database className="h-10 w-10" />,
     features: [
-      "99.9% uptime guarantee",
-      "Fast SSD storage",
-      "Free SSL certificates",
-      "Daily backups",
-      "24/7 technical support",
+      "Website Serach Ingine Optimization",
+      "SEO Friendly GMB Setup",
+      "Complete Infos on Google Biz Profile",
+      "Included Popular Keywords",
     ],
-    image: "/web-hosting.webp",
+    image: "/seo.webp",
   },
   {
     id: "graphic-design",
@@ -86,9 +85,9 @@ export default function ServicesPage() {
   },
   {
     id: "video-editing",
-    title: "Video Editing",
+    title: "Video Ads Editing",
     description:
-      "Professional video editing services for marketing and social media. High-quality videos for clients globally and in UAE.",
+      "Professional video editing services for marketing and social media. High-quality videos for clients globally.",
     icon: <Video className="h-10 w-10" />,
     features: [
       "Marketing videos",
@@ -135,8 +134,10 @@ export default function ServicesPage() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4">My Services</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional digital services for businesses in Dubai, UAE, and worldwide. Custom solutions to help your
-              business grow online.
+              Complete digital solutions for small businesses. 
+            </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Industries Expertise: Facility & Maintenance | Contractors | Local Manufacturing | Automotive Services | Education & Coaching. 
             </p>
           </motion.div>
         </div>
